@@ -64,6 +64,66 @@ document.querySelectorAll('.filter-button').forEach(button => {
     });
 });
 
+// Gallery functionality
+document.querySelectorAll('.car-card').forEach(card => {
+    const prevButton = card.querySelector('.gallery-prev');
+    const nextButton = card.querySelector('.gallery-next');
+    const dots = card.querySelectorAll('.dot');
+    const images = card.querySelectorAll('.gallery-container img');
+    let currentIndex = 0;
+    
+    // Function to show image at the specified index
+    function showImage(index) {
+        // Hide all images
+        images.forEach(img => {
+            img.classList.remove('active-image');
+        });
+        
+        // Deactivate all dots
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Show the selected image and activate the corresponding dot
+        images[index].classList.add('active-image');
+        dots[index].classList.add('active');
+        
+        // Update current index
+        currentIndex = index;
+    }
+    
+    // Previous button click
+    if (prevButton) {
+        prevButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) {
+                newIndex = images.length - 1;
+            }
+            showImage(newIndex);
+        });
+    }
+    
+    // Next button click
+    if (nextButton) {
+        nextButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            let newIndex = currentIndex + 1;
+            if (newIndex >= images.length) {
+                newIndex = 0;
+            }
+            showImage(newIndex);
+        });
+    }
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            showImage(index);
+        });
+    });
+});
+
 // Pagination (for demonstration purposes)
 document.querySelectorAll('.pagination-item').forEach(item => {
     item.addEventListener('click', function() {

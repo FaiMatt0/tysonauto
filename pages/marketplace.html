@@ -110,25 +110,52 @@
                     <span class="en-content">Sedan</span>
                 </button>
                 <button class="filter-button" data-filter="hatchback">Hatchback</button>
+                <button class="filter-button" data-filter="mpv">
+                    <span class="it-content">Monovolume</span>
+                    <span class="en-content">MPV</span>
+                </button>
                 <button class="filter-button" data-filter="sports">
                     <span class="it-content">Sportiva</span>
                     <span class="en-content">Sports</span>
+                </button>
+                <button class="filter-button" data-filter="neopatentati">
+                    <span class="it-content">Neopatentati</span>
+                    <span class="en-content">New Drivers</span>
                 </button>
             </div>
 
             <div class="cars-grid">
                 <!-- Car 1 -->
-                <div class="car-card" data-category="suv">
+                <div class="car-card" data-category="mpv">
                     <div class="car-image">
-                        <img src="/api/placeholder/600/400" alt="Audi Q5 2019">
-                        <div class="car-price">€34,500</div>
+                        <div class="gallery-container">
+                            <img src="../images/picasso.jpg" alt="Citroen C4 Picasso 2008" class="active-image">
+                            <img src="../images/picasso2.jpg" alt="Citroen C4 Picasso 2008" class="gallery-image">
+                            <img src="../images/picasso-interni.jpg" alt="Citroen C4 Picasso 2008" class="gallery-image">
+                            <img src="../images/picasso-interni2.jpg" alt="Citroen C4 Picasso 2008" class="gallery-image">
+                            <img src="../images/picasso-km.jpg" alt="Citroen C4 Picasso 2008" class="gallery-image">
+                            <img src="../images/picasso-libretto.jpg" alt="Citroen C4 Picasso 2008" class="gallery-image">
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="gallery-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                            <span class="dot" data-index="4"></span>
+                            <span class="dot" data-index="5"></span>
+                        </div>
+                        <div class="car-price">€4,000</div>
                     </div>
                     <div class="car-details">
-                        <h3 class="car-title">Audi Q5 2019</h3>
+                        <h3 class="car-title">Citroen C4 Picasso 2008</h3>
                         <div class="car-specs">
                             <div class="car-spec">
                                 <i class="fas fa-tachometer-alt"></i>
-                                <span>45,000 km</span>
+                                <span>231000 km</span>
                             </div>
                             <div class="car-spec">
                                 <i class="fas fa-gas-pump"></i>
@@ -140,12 +167,10 @@
                             </div>
                         </div>
                         <p class="car-description it-content">
-                            Audi Q5 in ottime condizioni, un solo proprietario. Dotata di navigatore, 
-                            tetto panoramico, sensori di parcheggio e telecamera posteriore.
+                            Citroen C4 Picasso in ottime condizioni, un solo proprietario.
                         </p>
                         <p class="car-description en-content">
-                            Audi Q5 in excellent condition, single owner. Equipped with navigator, 
-                            panoramic roof, parking sensors, and rear camera.
+                            Citroen C4 Picasso in excellent condition, single owner.
                         </p>
                         <div class="car-actions">
                             <a href="../pages/contact.html" class="button secondary">
@@ -159,7 +184,22 @@
                 <!-- Car 2 -->
                 <div class="car-card" data-category="sedan">
                     <div class="car-image">
-                        <img src="/api/placeholder/600/400" alt="BMW Serie 3 2020">
+                        <div class="gallery-container">
+                            <img src="/api/placeholder/600/400?text=BMW Front" alt="BMW Serie 3 2020 Front" class="active-image">
+                            <img src="/api/placeholder/600/400?text=BMW Side" alt="BMW Serie 3 2020 Side" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=BMW Interior" alt="BMW Serie 3 2020 Interior" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=BMW Rear" alt="BMW Serie 3 2020 Rear" class="gallery-image">
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="gallery-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
                         <div class="car-price">€32,900</div>
                     </div>
                     <div class="car-details">
@@ -198,7 +238,22 @@
                 <!-- Car 3 -->
                 <div class="car-card" data-category="hatchback">
                     <div class="car-image">
-                        <img src="/api/placeholder/600/400" alt="Volkswagen Golf 2021">
+                        <div class="gallery-container">
+                            <img src="/api/placeholder/600/400?text=Golf Front" alt="Volkswagen Golf 2021 Front" class="active-image">
+                            <img src="/api/placeholder/600/400?text=Golf Side" alt="Volkswagen Golf 2021 Side" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Golf Interior" alt="Volkswagen Golf 2021 Interior" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Golf Rear" alt="Volkswagen Golf 2021 Rear" class="gallery-image">
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="gallery-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
                         <div class="car-price">€24,500</div>
                     </div>
                     <div class="car-details">
@@ -237,7 +292,22 @@
                 <!-- Car 4 -->
                 <div class="car-card" data-category="sports">
                     <div class="car-image">
-                        <img src="/api/placeholder/600/400" alt="Porsche Cayman 2018">
+                        <div class="gallery-container">
+                            <img src="/api/placeholder/600/400?text=Porsche Front" alt="Porsche Cayman 2018 Front" class="active-image">
+                            <img src="/api/placeholder/600/400?text=Porsche Side" alt="Porsche Cayman 2018 Side" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Porsche Interior" alt="Porsche Cayman 2018 Interior" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Porsche Rear" alt="Porsche Cayman 2018 Rear" class="gallery-image">
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="gallery-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
                         <div class="car-price">€65,000</div>
                     </div>
                     <div class="car-details">
@@ -276,7 +346,22 @@
                 <!-- Car 5 -->
                 <div class="car-card" data-category="suv">
                     <div class="car-image">
-                        <img src="/api/placeholder/600/400" alt="Range Rover Evoque 2019">
+                        <div class="gallery-container">
+                            <img src="/api/placeholder/600/400?text=Range Rover Front" alt="Range Rover Evoque 2019 Front" class="active-image">
+                            <img src="/api/placeholder/600/400?text=Range Rover Side" alt="Range Rover Evoque 2019 Side" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Range Rover Interior" alt="Range Rover Evoque 2019 Interior" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Range Rover Rear" alt="Range Rover Evoque 2019 Rear" class="gallery-image">
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="gallery-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
                         <div class="car-price">€38,900</div>
                     </div>
                     <div class="car-details">
@@ -315,7 +400,22 @@
                 <!-- Car 6 -->
                 <div class="car-card" data-category="sedan">
                     <div class="car-image">
-                        <img src="/api/placeholder/600/400" alt="Mercedes Classe C 2020">
+                        <div class="gallery-container">
+                            <img src="/api/placeholder/600/400?text=Mercedes Front" alt="Mercedes Classe C 2020 Front" class="active-image">
+                            <img src="/api/placeholder/600/400?text=Mercedes Side" alt="Mercedes Classe C 2020 Side" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Mercedes Interior" alt="Mercedes Classe C 2020 Interior" class="gallery-image">
+                            <img src="/api/placeholder/600/400?text=Mercedes Rear" alt="Mercedes Classe C 2020 Rear" class="gallery-image">
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="gallery-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
                         <div class="car-price">€36,500</div>
                     </div>
                     <div class="car-details">
@@ -384,9 +484,9 @@
                     <p class="it-content">La tua officina automobilistica di fiducia dal 2020.</p>
                     <p class="en-content">Your trusted auto garage since 2020.</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/Tysonautoaviano/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tysonauto_garage"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@tysonauto1"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">

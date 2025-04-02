@@ -74,6 +74,12 @@
     margin-bottom: 60px;
 }
 
+/* Car card layout improvements */
+.car-card {
+    display: flex;
+    flex-direction: column;
+}
+
 .car-card {
     background-color: white;
     border-radius: 8px;
@@ -92,15 +98,87 @@
     position: relative;
 }
 
-.car-image img {
+/* Gallery styles */
+.gallery-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
-.car-card:hover .car-image img {
-    transform: scale(1.05);
+.gallery-container img.active-image {
+    opacity: 1;
+    position: relative;
+}
+
+.gallery-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.car-image:hover .gallery-controls {
+    opacity: 1;
+}
+
+.gallery-prev, .gallery-next {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.gallery-prev:hover, .gallery-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    z-index: 2;
+}
+
+.gallery-dots .dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.gallery-dots .dot.active {
+    background: white;
 }
 
 .car-price {
@@ -112,10 +190,17 @@
     padding: 8px 15px;
     border-radius: 5px;
     font-weight: 700;
+    z-index: 3;  /* Ensure price is above gallery */
 }
 
 .car-details {
     padding: 20px;
+}
+
+.car-card .car-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .car-title {
@@ -150,9 +235,17 @@
     line-height: 1.6;
 }
 
+.car-card .car-description {
+    min-height: 60px;
+}
+
 .car-actions {
     display: flex;
     justify-content: space-between;
+}
+
+.car-card .car-actions {
+    margin-top: auto;
 }
 
 .pagination {
@@ -188,6 +281,15 @@
 
     .marketplace-intro, .filter-section {
         padding: 50px 0 30px;
+    }
+    
+    .gallery-controls {
+        opacity: 1;  /* Always visible on mobile */
+    }
+    
+    .gallery-prev, .gallery-next {
+        width: 25px;
+        height: 25px;
     }
 }
 
