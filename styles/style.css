@@ -110,8 +110,14 @@ img {
     padding: 15px 20px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-    height: 50px;
+    height: 65px; /* Increased from 60px to 65px */
+    vertical-align: middle;
 }
 
 .navigation ul {
