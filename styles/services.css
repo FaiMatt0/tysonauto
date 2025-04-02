@@ -1,0 +1,312 @@
+/* Page specific styles */
+.page-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.breadcrumbs {
+    margin-bottom: 10px;
+}
+
+.breadcrumbs a:hover {
+    color: var(--secondary-color);
+}
+
+.services-intro {
+    padding: 80px 0 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-intro h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.services-intro p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.service-categories {
+    padding: 0 0 80px;
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.category-tab {
+    padding: 12px 25px;
+    background-color: var(--gray-light);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.category-tab:hover {
+    background-color: var(--gray-medium);
+}
+
+.category-tab.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.service-item {
+    background-color: var(--gray-light);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-item:hover .service-image img {
+    transform: scale(1.1);
+}
+
+.service-content {
+    padding: 25px;
+}
+
+.service-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-content p {
+    margin-bottom: 20px;
+    color: var(--gray-dark);
+}
+
+.service-features {
+    margin-bottom: 20px;
+}
+
+.service-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-feature i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.pricing-section {
+    padding: 80px 0;
+    background-color: var(--gray-light);
+}
+
+.pricing-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+.pricing-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pricing-table tr:hover td {
+    background-color: var(--gray-light);
+}
+
+.pricing-note {
+    text-align: center;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.process-section {
+    padding: 80px 0;
+}
+
+.process-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+}
+
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    right: -15px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.process-step h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background-color: var(--gray-light);
+}
+
+.faq-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background-color: var(--gray-light);
+}
+
+.faq-question i {
+    transition: var(--transition);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 20px 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step:not(:last-child)::after {
+        display: none;
+    }
+
+    .services-intro, .pricing-section, .process-section, .faq-section {
+        padding: 50px 0;
+    }
+
+    .category-tab {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

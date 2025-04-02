@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/mobile.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="../styles/services.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Servizi - Tyson Autogarage</title>
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="Tyson Autogarage Logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../pages/index.html">Home</a></li>
+                    <li><a href="../pages/about.html">
+                        <span class="it-content">Chi Siamo</span>
+                        <span class="en-content">About Us</span>
+                    </a></li>
+                    <li><a href="../pages/services.html" class="active">
+                        <span class="it-content">Servizi</span>
+                        <span class="en-content">Services</span>
+                    </a></li>
+                    <li><a href="../pages/marketplace.html">Marketplace</a></li>
+                    <li><a href="../pages/contact.html">
+                        <span class="it-content">Contatti</span>
+                        <span class="en-content">Contact</span>
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button class="active" data-lang="it">IT</button>
+                <button data-lang="en">EN</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/about.html">
+                <span class="it-content">Chi Siamo</span>
+                <span class="en-content">About Us</span>
+            </a></li>
+            <li><a href="../pages/services.html" class="active">
+                <span class="it-content">Servizi</span>
+                <span class="en-content">Services</span>
+            </a></li>
+            <li><a href="../pages/marketplace.html">Marketplace</a></li>
+            <li><a href="../pages/contact.html">
+                <span class="it-content">Contatti</span>
+                <span class="en-content">Contact</span>
+            </a></li>
+        </ul>
+        <div class="mobile-language-selector">
+            <button class="active" data-lang="it">IT</button>
+            <button data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <div class="content">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> / 
+                <span class="it-content">Servizi</span>
+                <span class="en-content">Services</span>
+            </div>
+            <h1>
+                <span class="it-content">I Nostri Servizi</span>
+                <span class="en-content">Our Services</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="services-intro">
+        <div class="content">
+            <h2>
+                <span class="it-content">Servizi Automobilistici Completi</span>
+                <span class="en-content">Comprehensive Automotive Services</span>
+            </h2>
+            <p class="it-content">
+                Tyson Autogarage offre una gamma completa di servizi automobilistici per mantenere il tuo veicolo nelle migliori condizioni.
+                Dai servizi di manutenzione ordinaria alle riparazioni complesse, il nostro team di tecnici qualificati è qui per aiutarti.
+            </p>
+            <p class="en-content">
+                Tyson Autogarage offers a comprehensive range of automotive services to keep your vehicle in top condition.
+                From routine maintenance to complex repairs, our team of qualified technicians is here to help.
+            </p>
+        </div>
+    </div>
+
+    <div class="service-categories">
+        <div class="content">
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="all">
+                    <span class="it-content">Tutti</span>
+                    <span class="en-content">All</span>
+                </div>
+                <div class="category-tab" data-category="maintenance">
+                    <span class="it-content">Manutenzione</span>
+                    <span class="en-content">Maintenance</span>
+                </div>
+                <div class="category-tab" data-category="repair">
+                    <span class="it-content">Riparazioni</span>
+                    <span class="en-content">Repairs</span>
+                </div>
+                <div class="category-tab" data-category="diagnostic">
+                    <span class="it-content">Diagnostica</span>
+                    <span class="en-content">Diagnostics</span>
+                </div>
+                <div class="category-tab" data-category="specialty">
+                    <span class="it-content">Specialità</span>
+                    <span class="en-content">Specialty</span>
+                </div>
+            </div>
+
+            <div class="service-list">
+                <div class="service-item" data-category="maintenance">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Oil Change Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>
+                            <span class="it-content">Cambio Olio e Filtri</span>
+                            <span class="en-content">Oil and Filter Change</span>
+                        </h3>
+                        <p class="it-content">
+                            Mantieni il motore della tua auto in condizioni ottimali con un regolare cambio dell'olio e dei filtri.
+                        </p>
+                        <p class="en-content">
+                            Keep your car's engine in optimal condition with regular oil and filter changes.
+                        </p>
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Olio di alta qualità per tutti i tipi di motori</span>
+                                <span class="en-content">High-quality oil for all engine types</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Filtri originali o equivalenti</span>
+                                <span class="en-content">Original or equivalent filters</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Controllo di livelli e liquidi</span>
+                                <span class="en-content">Fluid level checks</span>
+                            </div>
+                        </div>
+                        <a href="../pages/contact.html" class="button secondary">
+                            <span class="it-content">Richiedi Preventivo</span>
+                            <span class="en-content">Request Quote</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-category="maintenance">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Brake Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>
+                            <span class="it-content">Servizio Freni</span>
+                            <span class="en-content">Brake Service</span>
+                        </h3>
+                        <p class="it-content">
+                            Assicurati che i freni della tua auto funzionino perfettamente con i nostri servizi di manutenzione e riparazione.
+                        </p>
+                        <p class="en-content">
+                            Ensure your car's brakes are working perfectly with our maintenance and repair services.
+                        </p>
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Sostituzione pastiglie e dischi</span>
+                                <span class="en-content">Brake pad and disc replacement</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Controllo e sostituzione del liquido dei freni</span>
+                                <span class="en-content">Brake fluid check and replacement</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Diagnosi elettronica del sistema frenante</span>
+                                <span class="en-content">Electronic diagnosis of the braking system</span>
+                            </div>
+                        </div>
+                        <a href="../pages/contact.html" class="button secondary">
+                            <span class="it-content">Richiedi Preventivo</span>
+                            <span class="en-content">Request Quote</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-category="repair">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Engine Repair">
+                    </div>
+                    <div class="service-content">
+                        <h3>
+                            <span class="it-content">Riparazione Motore</span>
+                            <span class="en-content">Engine Repair</span>
+                        </h3>
+                        <p class="it-content">
+                            Dai problemi minori alle revisioni complete, il nostro team di esperti è in grado di risolvere qualsiasi problema del motore.
+                        </p>
+                        <p class="en-content">
+                            From minor issues to complete overhauls, our expert team can solve any engine problem.
+                        </p>
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Riparazione di perdite e guasti</span>
+                                <span class="en-content">Repair of leaks and failures</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Sostituzione della cinghia di distribuzione</span>
+                                <span class="en-content">Timing belt replacement</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Revisione completa del motore</span>
+                                <span class="en-content">Complete engine overhaul</span>
+                            </div>
+                        </div>
+                        <a href="../pages/contact.html" class="button secondary">
+                            <span class="it-content">Richiedi Preventivo</span>
+                            <span class="en-content">Request Quote</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-category="diagnostic">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Diagnostic Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>
+                            <span class="it-content">Diagnostica Computerizzata</span>
+                            <span class="en-content">Computerized Diagnostics</span>
+                        </h3>
+                        <p class="it-content">
+                            Utilizziamo strumenti di diagnostica all'avanguardia per identificare con precisione qualsiasi problema del veicolo.
+                        </p>
+                        <p class="en-content">
+                            We use state-of-the-art diagnostic tools to accurately identify any vehicle problems.
+                        </p>
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Lettura e cancellazione dei codici di errore</span>
+                                <span class="en-content">Reading and clearing error codes</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Test approfonditi dei sistemi</span>
+                                <span class="en-content">In-depth system testing</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Diagnostica di tutti i tipi di veicoli</span>
+                                <span class="en-content">Diagnostics for all types of vehicles</span>
+                            </div>
+                        </div>
+                        <a href="../pages/contact.html" class="button secondary">
+                            <span class="it-content">Richiedi Preventivo</span>
+                            <span class="en-content">Request Quote</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-category="specialty">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Air Conditioning Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>
+                            <span class="it-content">Servizio Aria Condizionata</span>
+                            <span class="en-content">Air Conditioning Service</span>
+                        </h3>
+                        <p class="it-content">
+                            Mantieni fresca la tua auto con i nostri servizi di riparazione e manutenzione dell'aria condizionata.
+                        </p>
+                        <p class="en-content">
+                            Keep your car cool with our air conditioning repair and maintenance services.
+                        </p>
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Ricarica del refrigerante</span>
+                                <span class="en-content">Refrigerant recharge</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Riparazione di perdite</span>
+                                <span class="en-content">Leak repair</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Sostituzione di componenti</span>
+                                <span class="en-content">Component replacement</span>
+                            </div>
+                        </div>
+                        <a href="../pages/contact.html" class="button secondary">
+                            <span class="it-content">Richiedi Preventivo</span>
+                            <span class="en-content">Request Quote</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-category="specialty">
+                    <div class="service-image">
+                        <img src="/api/placeholder/600/400" alt="Suspension Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>
+                            <span class="it-content">Servizio Sospensioni</span>
+                            <span class="en-content">Suspension Service</span>
+                        </h3>
+                        <p class="it-content">
+                            Migliora il comfort e la sicurezza della tua guida con la manutenzione e la riparazione delle sospensioni.
+                        </p>
+                        <p class="en-content">
+                            Improve your driving comfort and safety with suspension maintenance and repair.
+                        </p>
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Sostituzione di ammortizzatori e molle</span>
+                                <span class="en-content">Shock absorber and spring replacement</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Allineamento delle ruote</span>
+                                <span class="en-content">Wheel alignment</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span class="it-content">Riparazione di bracci e giunti</span>
+                                <span class="en-content">Arm and joint repair</span>
+                            </div>
+                        </div>
+                        <a href="../pages/contact.html" class="button secondary">
+                            <span class="it-content">Richiedi Preventivo</span>
+                            <span class="en-content">Request Quote</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-section">
+        <div class="content">
+            <div class="pricing-intro">
+                <h2>
+                    <span class="it-content">Prezzi Trasparenti</span>
+                    <span class="en-content">Transparent Pricing</span>
+                </h2>
+                <p class="it-content">
+                    In Tyson Autogarage crediamo nella trasparenza dei prezzi. Ecco una panoramica indicativa dei costi dei nostri servizi più comuni.
+                    Per un preventivo personalizzato, non esitare a contattarci.
+                </p>
+                <p class="en-content">
+                    At Tyson Autogarage, we believe in price transparency. Here is an indicative overview of the costs of our most common services.
+                    For a personalized quote, don't hesitate to contact us.
+                </p>
+            </div>
+
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="it-content">Servizio</span>
+                            <span class="en-content">Service</span>
+                        </th>
+                        <th>
+                            <span class="it-content">Prezzo Da</span>
+                            <span class="en-content">Price From</span>
+                        </th>
+                        <th>
+                            <span class="it-content">Prezzo A</span>
+                            <span class="en-content">Price To</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="it-content">Cambio Olio e Filtri</span>
+                            <span class="en-content">Oil and Filter Change</span>
+                        </td>
+                        <td>€50</td>
+                        <td>€120</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="it-content">Sostituzione Pastiglie Freni</span>
+                            <span class="en-content">Brake Pad Replacement</span>
+                        </td>
+                        <td>€80</td>
+                        <td>€200</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="it-content">Diagnostica Computerizzata</span>
+                            <span class="en-content">Computerized Diagnostics</span>
+                        </td>
+                        <td>€40</td>
+                        <td>€100</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="it-content">Ricarica Aria Condizionata</span>
+                            <span class="en-content">Air Conditioning Recharge</span>
+                        </td>
+                        <td>€70</td>
+                        <td>€150</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="it-content">Sostituzione Cinghia di Distribuzione</span>
+                            <span class="en-content">Timing Belt Replacement</span>
+                        </td>
+                        <td>€300</td>
+                        <td>€800</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="it-content">Allineamento Ruote</span>
+                            <span class="en-content">Wheel Alignment</span>
+                        </td>
+                        <td>€50</td>
+                        <td>€100</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="pricing-note">
+                <span class="it-content">* I prezzi possono variare in base al modello e alla marca del veicolo</span>
+                <span class="en-content">* Prices may vary depending on the vehicle model and brand</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="process-section">
+        <div class="content">
+            <div class="process-intro">
+                <h2>
+                    <span class="it-content">Il Nostro Processo</span>
+                    <span class="en-content">Our Process</span>
+                </h2>
+                <p class="it-content">
+                    Rendiamo il processo di riparazione e manutenzione dell'auto il più semplice e trasparente possibile. 
+                    Ecco come lavoriamo:
+                </p>
+                <p class="en-content">
+                    We make the car repair and maintenance process as simple and transparent as possible.
+                    Here's how we work:
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>
+                        <span class="it-content">Diagnosi</span>
+                        <span class="en-content">Diagnosis</span>
+                    </h3>
+                    <p class="it-content">
+                        Identifichiamo con precisione il problema utilizzando strumenti diagnostici avanzati e l'esperienza dei nostri tecnici.
+                    </p>
+                    <p class="en-content">
+                        We precisely identify the problem using advanced diagnostic tools and the expertise of our technicians.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>
+                        <span class="it-content">Preventivo</span>
+                        <span class="en-content">Quote</span>
+                    </h3>
+                    <p class="it-content">
+                        Forniamo un preventivo dettagliato e trasparente, spiegando chiaramente quali interventi sono necessari.
+                    </p>
+                    <p class="en-content">
+                        We provide a detailed and transparent quote, clearly explaining what work is needed.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>
+                        <span class="it-content">Riparazione</span>
+                        <span class="en-content">Repair</span>
+                    </h3>
+                    <p class="it-content">
+                        I nostri tecnici qualificati eseguono il lavoro utilizzando ricambi di qualità e strumenti professionali.
+                    </p>
+                    <p class="en-content">
+                        Our qualified technicians perform the work using quality parts and professional tools.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>
+                        <span class="it-content">Controllo Qualità</span>
+                        <span class="en-content">Quality Check</span>
+                    </h3>
+                    <p class="it-content">
+                        Ogni veicolo viene sottoposto a un rigoroso controllo di qualità prima di essere riconsegnato al cliente.
+                    </p>
+                    <p class="en-content">
+                        Every vehicle undergoes a rigorous quality check before being returned to the customer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <div class="content">
+            <div class="faq-intro">
+                <h2>
+                    <span class="it-content">Domande Frequenti</span>
+                    <span class="en-content">Frequently Asked Questions</span>
+                </h2>
+                <p class="it-content">
+                    Ecco alcune delle domande più comuni che riceviamo dai nostri clienti.
+                </p>
+                <p class="en-content">
+                    Here are some of the most common questions we receive from our customers.
+                </p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="it-content">Con quale frequenza dovrei fare la manutenzione della mia auto?</span>
+                        <span class="en-content">How often should I service my car?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="it-content">
+                            La frequenza della manutenzione dipende dal modello dell'auto, dallo stile di guida e dal chilometraggio. 
+                            In generale, consigliamo un controllo completo ogni 15.000 km o una volta all'anno, a seconda di quale evento si verifichi prima. 
+                            Il cambio dell'olio dovrebbe essere effettuato ogni 7.500-10.000 km per i motori moderni.
+                        </p>
+                        <p class="en-content">
+                            The frequency of maintenance depends on the car model, driving style, and mileage.
+                            In general, we recommend a full check every 15,000 km or once a year, whichever comes first.
+                            Oil changes should be done every 7,500-10,000 km for modern engines.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="it-content">Quanto tempo richiede una riparazione?</span>
+                        <span class="en-content">How long does a repair take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="it-content">
+                            I tempi di riparazione variano in base al tipo di intervento necessario. Servizi di routine come 
+                            il cambio dell'olio o dei freni richiedono generalmente poche ore, mentre riparazioni più complesse 
+                            potrebbero richiedere diversi giorni. Vi forniremo sempre una stima precisa dei tempi prima di iniziare il lavoro.
+                        </p>
+                        <p class="en-content">
+                            Repair times vary depending on the type of work needed. Routine services such as
+                            oil changes or brake work generally take a few hours, while more complex repairs
+                            might take several days. We will always provide you with an accurate time estimate before starting the work.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="it-content">Offrite garanzia sui vostri servizi?</span>
+                        <span class="en-content">Do you offer a warranty on your services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="it-content">
+                            Sì, offriamo una garanzia di 12 mesi o 20.000 km (a seconda di quale evento si verifichi prima) su tutti 
+                            i ricambi e la manodopera. Questo riflette la nostra fiducia nella qualità del nostro lavoro e dei 
+                            ricambi che utilizziamo.
+                        </p>
+                        <p class="en-content">
+                            Yes, we offer a 12-month or 20,000 km warranty (whichever comes first) on all
+                            parts and labor. This reflects our confidence in the quality of our work and the
+                            parts we use.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="it-content">Posso portare i miei ricambi?</span>
+                        <span class="en-content">Can I bring my own parts?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="it-content">
+                            In generale, preferiamo utilizzare ricambi che forniamo direttamente, poiché possiamo garantirne 
+                            la qualità e offrire una garanzia completa. Tuttavia, in casi specifici, possiamo valutare l'installazione 
+                            di ricambi forniti dal cliente, anche se in questo caso la garanzia coprirà solo la manodopera.
+                        </p>
+                        <p class="en-content">
+                            In general, we prefer to use parts that we supply directly, as we can guarantee
+                            their quality and offer a full warranty. However, in specific cases, we can consider installing
+                            customer-supplied parts, although in this case the warranty will only cover the labor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="content">
+            <h2>
+                <span class="it-content">Pronto a migliorare la cura della tua auto?</span>
+                <span class="en-content">Ready to improve your car care?</span>
+            </h2>
+            <p class="it-content">Contattaci oggi per un preventivo gratuito o per prenotare un appuntamento.</p>
+            <p class="en-content">Contact us today for a free quote or to schedule an appointment.</p>
+            <a href="../pages/contact.html" class="button primary">
+                <span class="it-content">Contattaci Ora</span>
+                <span class="en-content">Contact Us Now</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Tyson Autogarage</h3>
+                    <p class="it-content">La tua officina automobilistica di fiducia dal 2008.</p>
+                    <p class="en-content">Your trusted auto garage since 2008.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="it-content">Collegamenti Rapidi</h3>
+                    <h3 class="en-content">Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/about.html">
+                            <span class="it-content">Chi Siamo</span>
+                            <span class="en-content">About Us</span>
+                        </a></li>
+                        <li><a href="../pages/services.html">
+                            <span class="it-content">Servizi</span>
+                            <span class="en-content">Services</span>
+                        </a></li>
+                        <li><a href="../pages/marketplace.html">Marketplace</a></li>
+                        <li><a href="../pages/contact.html">
+                            <span class="it-content">Contatti</span>
+                            <span class="en-content">Contact</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="it-content">Contatti</h3>
+                    <h3 class="en-content">Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano, Italia</p>
+                    <p><i class="fas fa-phone"></i> +39 02 1234567</p>
+                    <p><i class="fas fa-envelope"></i> info@tysonautogarage.it</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="it-content">Orari di Apertura</h3>
+                    <h3 class="en-content">Opening Hours</h3>
+                    <p class="it-content">Lunedì - Venerdì: 8:00 - 18:00</p>
+                    <p class="en-content">Monday - Friday: 8:00 - 18:00</p>
+                    <p class="it-content">Sabato: 9:00 - 14:00</p>
+                    <p class="en-content">Saturday: 9:00 - 14:00</p>
+                    <p class="it-content">Domenica: Chiuso</p>
+                    <p class="en-content">Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tyson Autogarage. 
+                    <span class="it-content">Tutti i diritti riservati.</span>
+                    <span class="en-content">All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/services.js"></script>
+</body>
+</html>

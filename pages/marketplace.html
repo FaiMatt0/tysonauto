@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/mobile.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="../styles/marketplace.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Marketplace - Tyson Autogarage</title>
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="Tyson Autogarage Logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/about.html">
+                        <span class="it-content">Chi Siamo</span>
+                        <span class="en-content">About Us</span>
+                    </a></li>
+                    <li><a href="../pages/services.html">
+                        <span class="it-content">Servizi</span>
+                        <span class="en-content">Services</span>
+                    </a></li>
+                    <li><a href="../pages/marketplace.html" class="active">Marketplace</a></li>
+                    <li><a href="../pages/contact.html">
+                        <span class="it-content">Contatti</span>
+                        <span class="en-content">Contact</span>
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button class="active" data-lang="it">IT</button>
+                <button data-lang="en">EN</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/about.html">
+                <span class="it-content">Chi Siamo</span>
+                <span class="en-content">About Us</span>
+            </a></li>
+            <li><a href="../pages/services.html">
+                <span class="it-content">Servizi</span>
+                <span class="en-content">Services</span>
+            </a></li>
+            <li><a href="../pages/marketplace.html" class="active">Marketplace</a></li>
+            <li><a href="../pages/contact.html">
+                <span class="it-content">Contatti</span>
+                <span class="en-content">Contact</span>
+            </a></li>
+        </ul>
+        <div class="mobile-language-selector">
+            <button class="active" data-lang="it">IT</button>
+            <button data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <div class="content">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> / Marketplace
+            </div>
+            <h1>Marketplace</h1>
+        </div>
+    </div>
+
+    <div class="marketplace-intro">
+        <div class="content">
+            <h2>
+                <span class="it-content">Auto Usate Selezionate</span>
+                <span class="en-content">Selected Used Cars</span>
+            </h2>
+            <p class="it-content">
+                Nel nostro marketplace troverai una selezione di auto usate di qualità, 
+                accuratamente ispezionate e certificate dai nostri tecnici esperti.
+                Ogni veicolo viene sottoposto a controlli rigorosi prima di essere messo in vendita.
+            </p>
+            <p class="en-content">
+                In our marketplace, you'll find a selection of quality used cars, 
+                carefully inspected and certified by our expert technicians.
+                Each vehicle undergoes rigorous checks before being put up for sale.
+            </p>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <div class="content">
+            <div class="filter-container">
+                <button class="filter-button active" data-filter="all">
+                    <span class="it-content">Tutti</span>
+                    <span class="en-content">All</span>
+                </button>
+                <button class="filter-button" data-filter="suv">SUV</button>
+                <button class="filter-button" data-filter="sedan">
+                    <span class="it-content">Berlina</span>
+                    <span class="en-content">Sedan</span>
+                </button>
+                <button class="filter-button" data-filter="hatchback">Hatchback</button>
+                <button class="filter-button" data-filter="sports">
+                    <span class="it-content">Sportiva</span>
+                    <span class="en-content">Sports</span>
+                </button>
+            </div>
+
+            <div class="cars-grid">
+                <!-- Car 1 -->
+                <div class="car-card" data-category="suv">
+                    <div class="car-image">
+                        <img src="/api/placeholder/600/400" alt="Audi Q5 2019">
+                        <div class="car-price">€34,500</div>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Audi Q5 2019</h3>
+                        <div class="car-specs">
+                            <div class="car-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>45,000 km</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-cog"></i>
+                                <span>Automatico</span>
+                            </div>
+                        </div>
+                        <p class="car-description it-content">
+                            Audi Q5 in ottime condizioni, un solo proprietario. Dotata di navigatore, 
+                            tetto panoramico, sensori di parcheggio e telecamera posteriore.
+                        </p>
+                        <p class="car-description en-content">
+                            Audi Q5 in excellent condition, single owner. Equipped with navigator, 
+                            panoramic roof, parking sensors, and rear camera.
+                        </p>
+                        <div class="car-actions">
+                            <a href="../pages/contact.html" class="button secondary">
+                                <span class="it-content">Contatta per Dettagli</span>
+                                <span class="en-content">Contact for Details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card" data-category="sedan">
+                    <div class="car-image">
+                        <img src="/api/placeholder/600/400" alt="BMW Serie 3 2020">
+                        <div class="car-price">€32,900</div>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">BMW Serie 3 2020</h3>
+                        <div class="car-specs">
+                            <div class="car-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>30,000 km</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Benzina</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-cog"></i>
+                                <span>Automatico</span>
+                            </div>
+                        </div>
+                        <p class="car-description it-content">
+                            BMW Serie 3 in perfette condizioni, ancora in garanzia. Full optional con 
+                            interni in pelle, sistema di assistenza alla guida e pacchetto M Sport.
+                        </p>
+                        <p class="car-description en-content">
+                            BMW 3 Series in perfect condition, still under warranty. Fully equipped with 
+                            leather interior, driving assistance system, and M Sport package.
+                        </p>
+                        <div class="car-actions">
+                            <a href="../pages/contact.html" class="button secondary">
+                                <span class="it-content">Contatta per Dettagli</span>
+                                <span class="en-content">Contact for Details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card" data-category="hatchback">
+                    <div class="car-image">
+                        <img src="/api/placeholder/600/400" alt="Volkswagen Golf 2021">
+                        <div class="car-price">€24,500</div>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Volkswagen Golf 2021</h3>
+                        <div class="car-specs">
+                            <div class="car-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>20,000 km</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Benzina</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-cog"></i>
+                                <span>Manuale</span>
+                            </div>
+                        </div>
+                        <p class="car-description it-content">
+                            Volkswagen Golf 8 con pochissimi chilometri, come nuova. 
+                            Display touch, Apple CarPlay/Android Auto, cruise control adattivo.
+                        </p>
+                        <p class="car-description en-content">
+                            Volkswagen Golf 8 with very few kilometers, like new.
+                            Touch display, Apple CarPlay/Android Auto, adaptive cruise control.
+                        </p>
+                        <div class="car-actions">
+                            <a href="../pages/contact.html" class="button secondary">
+                                <span class="it-content">Contatta per Dettagli</span>
+                                <span class="en-content">Contact for Details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 4 -->
+                <div class="car-card" data-category="sports">
+                    <div class="car-image">
+                        <img src="/api/placeholder/600/400" alt="Porsche Cayman 2018">
+                        <div class="car-price">€65,000</div>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Porsche Cayman 2018</h3>
+                        <div class="car-specs">
+                            <div class="car-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>25,000 km</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Benzina</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-cog"></i>
+                                <span>PDK</span>
+                            </div>
+                        </div>
+                        <p class="car-description it-content">
+                            Porsche Cayman impeccabile, sempre tagliandata in Porsche. 
+                            Pacchetto Sport Chrono, scarico sportivo, cerchi da 20".
+                        </p>
+                        <p class="car-description en-content">
+                            Impeccable Porsche Cayman, always serviced at Porsche.
+                            Sport Chrono package, sports exhaust, 20" wheels.
+                        </p>
+                        <div class="car-actions">
+                            <a href="../pages/contact.html" class="button secondary">
+                                <span class="it-content">Contatta per Dettagli</span>
+                                <span class="en-content">Contact for Details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 5 -->
+                <div class="car-card" data-category="suv">
+                    <div class="car-image">
+                        <img src="/api/placeholder/600/400" alt="Range Rover Evoque 2019">
+                        <div class="car-price">€38,900</div>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Range Rover Evoque 2019</h3>
+                        <div class="car-specs">
+                            <div class="car-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>35,000 km</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-cog"></i>
+                                <span>Automatico</span>
+                            </div>
+                        </div>
+                        <p class="car-description it-content">
+                            Range Rover Evoque in perfette condizioni, versione HSE Dynamic.
+                            Tetto panoramico, navigatore, sedili in pelle, cerchi da 20".
+                        </p>
+                        <p class="car-description en-content">
+                            Range Rover Evoque in perfect condition, HSE Dynamic version.
+                            Panoramic roof, navigator, leather seats, 20" wheels.
+                        </p>
+                        <div class="car-actions">
+                            <a href="../pages/contact.html" class="button secondary">
+                                <span class="it-content">Contatta per Dettagli</span>
+                                <span class="en-content">Contact for Details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 6 -->
+                <div class="car-card" data-category="sedan">
+                    <div class="car-image">
+                        <img src="/api/placeholder/600/400" alt="Mercedes Classe C 2020">
+                        <div class="car-price">€36,500</div>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Mercedes Classe C 2020</h3>
+                        <div class="car-specs">
+                            <div class="car-spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>28,000 km</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="car-spec">
+                                <i class="fas fa-cog"></i>
+                                <span>Automatico</span>
+                            </div>
+                        </div>
+                        <p class="car-description it-content">
+                            Mercedes Classe C con pacchetto AMG Line, interni in pelle,
+                            display digitale, navigatore e telecamera a 360°.
+                        </p>
+                        <p class="car-description en-content">
+                            Mercedes C-Class with AMG Line package, leather interior,
+                            digital display, navigator, and 360° camera.
+                        </p>
+                        <div class="car-actions">
+                            <a href="../pages/contact.html" class="button secondary">
+                                <span class="it-content">Contatta per Dettagli</span>
+                                <span class="en-content">Contact for Details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <div class="pagination-item active">1</div>
+                <div class="pagination-item">2</div>
+                <div class="pagination-item">3</div>
+                <div class="pagination-item"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="content">
+            <h2>
+                <span class="it-content">Interessato a uno dei nostri veicoli?</span>
+                <span class="en-content">Interested in one of our vehicles?</span>
+            </h2>
+            <p class="it-content">Contattaci per maggiori informazioni o per prenotare un test drive.</p>
+            <p class="en-content">Contact us for more information or to schedule a test drive.</p>
+            <a href="../pages/contact.html" class="button primary">
+                <span class="it-content">Contattaci Ora</span>
+                <span class="en-content">Contact Us Now</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Tyson Autogarage</h3>
+                    <p class="it-content">La tua officina automobilistica di fiducia dal 2008.</p>
+                    <p class="en-content">Your trusted auto garage since 2008.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="it-content">Collegamenti Rapidi</h3>
+                    <h3 class="en-content">Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/about.html">
+                            <span class="it-content">Chi Siamo</span>
+                            <span class="en-content">About Us</span>
+                        </a></li>
+                        <li><a href="../pages/services.html">
+                            <span class="it-content">Servizi</span>
+                            <span class="en-content">Services</span>
+                        </a></li>
+                        <li><a href="../pages/marketplace.html">Marketplace</a></li>
+                        <li><a href="../pages/contact.html">
+                            <span class="it-content">Contatti</span>
+                            <span class="en-content">Contact</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="it-content">Contatti</h3>
+                    <h3 class="en-content">Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Milano, Italia</p>
+                    <p><i class="fas fa-phone"></i> +39 02 1234567</p>
+                    <p><i class="fas fa-envelope"></i> info@tysonautogarage.it</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="it-content">Orari di Apertura</h3>
+                    <h3 class="en-content">Opening Hours</h3>
+                    <p class="it-content">Lunedì - Venerdì: 8:00 - 18:00</p>
+                    <p class="en-content">Monday - Friday: 8:00 - 18:00</p>
+                    <p class="it-content">Sabato: 9:00 - 14:00</p>
+                    <p class="en-content">Saturday: 9:00 - 14:00</p>
+                    <p class="it-content">Domenica: Chiuso</p>
+                    <p class="en-content">Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tyson Autogarage. 
+                    <span class="it-content">Tutti i diritti riservati.</span>
+                    <span class="en-content">All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../scripts/marketplace.js"></script>
+</body>
+</html>
