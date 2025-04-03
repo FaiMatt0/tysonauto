@@ -148,6 +148,23 @@
         margin-bottom: 20px;
     }
 
+    /* Mobile testimonial styles */
+    .testimonial-slider {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-content p {
+        max-height: 200px;
+    }
+
+    .testimonial-card {
+        height: 250px; /* Slightly shorter on mobile */
+    }
+    
+    .testimonial-content p {
+        padding-right: 10px; /* More space for touch scrolling */
+    }
+
     /* CTA Section */
     .cta-section {
         padding: 50px 0;

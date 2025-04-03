@@ -11,6 +11,21 @@
     <title>Tyson Autogarage</title>
 </head>
 <body>
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="images/flag.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <video class="intro-video" autoplay muted loop playsinline>
+            <source src="images/intro-flag.mp4" type="video/mp4">
+        </video>
+        <div class="loader-content">
+            <img src="images/intro.png" alt="Tyson Autogarage" class="loader-logo">
+        </div>
+    </div>
+    
     <div class="header">
         <div class="content">
             <div class="logo">
@@ -54,10 +69,10 @@
     <div class="hero">
         <div class="content">
             <div class="hero-text">
-                <h1 class="it-content">Benvenuti a Tyson Autogarage</h1>
-                <h1 class="en-content">Welcome to Tyson Autogarage</h1>
-                <p class="it-content">La tua destinazione affidabile per tutti i servizi automobilistici.</p>
-                <p class="en-content">Your reliable destination for all automotive services.</p>
+                <h1 class="it-content">"Non ripariamo veicoli,<br>li facciamo rinascere"</h1>
+                <h1 class="en-content">"We don't just repair vehicles, we make them reborn"</h1>
+                <p class="it-content">TYSON AUTO GARAGE</p>
+                <p class="en-content">TYSON AUTO GARAGE</p>
                 <div class="hero-buttons">
                     <a href="pages/services.html" class="button primary">
                         <span class="it-content">I Nostri Servizi</span>
@@ -131,7 +146,7 @@
     <div class="about-preview">
         <div class="content">
             <div class="about-image">
-                <img src="/api/placeholder/500/300" alt="Our team">
+                <img src="images/about.jpg" alt="Our team">
             </div>
             <div class="about-text">
                 <h2>
@@ -160,38 +175,14 @@
                 <span class="it-content">Cosa Dicono i Nostri Clienti</span>
                 <span class="en-content">What Our Customers Say</span>
             </h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="it-content">"Servizio eccellente e personale competente. Hanno risolto il problema della mia auto in poco tempo e a un prezzo ragionevole."</p>
-                        <p class="en-content">"Excellent service and competent staff. They fixed my car's problem in a short time and at a reasonable price."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <p>Marco B.</p>
-                    </div>
+            <div class="testimonial-container">
+                <div class="testimonial-slider">
+                    <!-- Testimonials will be loaded dynamically via JavaScript -->
                 </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="it-content">"Affidabili e professionali. Consiglio vivamente Tyson Autogarage per qualsiasi problema automobilistico."</p>
-                        <p class="en-content">"Reliable and professional. I highly recommend Tyson Autogarage for any automotive problem."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <p>Laura F.</p>
-                    </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-pagination"></div>
+                    <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
