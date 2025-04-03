@@ -352,6 +352,7 @@
         width: 100%;
         max-width: 100%;
         padding: 15px;
+        bottom: 0;
     }
 
     .cookie-content {
