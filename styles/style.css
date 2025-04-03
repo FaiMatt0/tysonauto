@@ -5,11 +5,15 @@
     --primary-color: #1a1a1a;
     --secondary-color: #e63946;
     --accent-color: #457b9d;
+    --light-color: #f1faee;
     --light-color: rgba(241, 250, 238, 0.3); /* Much more transparent light color */
     --text-color: #333333;
+    --bg-color: #ffffff;
     --bg-color: rgba(255, 255, 255, 0.25); /* Very transparent white background */
     --footer-bg: #1a1a1a;
     --footer-text: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray-medium: #e9ecef;
     --gray-light: rgba(248, 249, 250, 0.2); /* Very transparent gray light */
     --gray-medium: rgba(233, 236, 239, 0.3); /* Very transparent gray medium */
     --gray-dark: #6c757d;
@@ -189,7 +193,7 @@ img {
 .hero {
     padding: 80px 0;
     background-color: var(--gray-light);
-    backdrop-filter: blur(3px); /* Optional: adds a slight blur effect */
+    backdrop-filter: blur(6px); /* Increased blur effect */
 }
 
 .hero .content {
@@ -263,7 +267,7 @@ img {
 }
 
 .service-card {
-    background-color: rgba(255, 255, 255, 0.95); /* Changed to nearly solid white background */
+    background-color: rgba(240, 240, 240, 0.85); /* Slightly darker background */
     padding: 30px;
     border-radius: 8px;
     box-shadow: var(--box-shadow);
@@ -295,7 +299,7 @@ img {
 .about-preview {
     padding: 80px 0;
     background-color: var(--light-color);
-    backdrop-filter: blur(3px); /* Optional: adds a slight blur effect */
+    backdrop-filter: blur(6px); /* Increased blur effect */
 }
 
 .about-preview .content {
@@ -333,7 +337,7 @@ img {
 
 .testimonial-slide {
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.95); /* Changed to nearly solid white background */
+    background-color: rgba(240, 240, 240, 0.85); /* Slightly darker background */
     border-radius: 8px;
     box-shadow: var(--box-shadow);
     padding: 30px;
@@ -351,6 +355,30 @@ img {
     /* Remove scroll functionality */
     overflow-y: visible;
     padding-right: 0;
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+.google-logo {
+    display: flex;
+    align-items: center;
+}
+
+.google-logo img {
+    height: 20px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.google-logo img:hover {
+    opacity: 1;
 }
 
 .testimonial-footer {
@@ -388,10 +416,10 @@ img {
 }
 
 .testimonial-card {
-    background-color: rgba(255, 255, 255, 0.95); /* Changed to nearly solid white background */
+    background-color: rgba(240, 240, 240, 0.85); /* Slightly darker background */
     border-radius: 8px;
     padding: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Darker shadow */
     transition: transform 0.3s ease;
     height: 350px; /* Increased fixed height for vertical layout */
     display: flex;
@@ -483,7 +511,7 @@ img {
 .pagination-dot {
     width: 10px;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.7); /* Changed from #ccc to white with slight transparency */
+    background-color: #888888; /* Changed from rgba(255, 255, 255, 0.7) to dark grey */
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
@@ -492,8 +520,8 @@ img {
 }
 
 .pagination-dot.active {
-    background-color: white; /* Changed from #333 to solid white */
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Optional: adding a subtle glow effect to the active dot */
+    background-color: #333333; /* Changed from white to darker grey for active dot */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Changed shadow color to match dark theme */
 }
 
 /* Make testimonial cards more vertical on smaller screens */
@@ -685,7 +713,7 @@ body.loaded {
     z-index: -1000;
     background-size: cover;
     overflow: hidden;
-    opacity: 0.3; /* Increased opacity for the background video from 0.15 to 0.3 */
+    opacity: 0.2; /* Decreased opacity for darker effect */
 }
 
 /* For specific section titles - adding shadow */
@@ -719,4 +747,161 @@ body.loaded {
     background-color: var(--secondary-color);
 }
 
-/* Rest of your CSS remains unchanged */
+/* Cookie Consent Banner */
+.cookie-consent {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1) inset;
+    z-index: 9999;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-50%) translateY(100px);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.cookie-consent.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.cookie-icon {
+    flex: 0 0 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff0000, #c80000);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    box-shadow: 0 5px 15px rgba(200, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.cookie-icon i {
+    color: white;
+    font-size: 40px;
+}
+
+.cookie-text {
+    flex: 1;
+    color: #ffffff;
+}
+
+.cookie-text h3 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
+.cookie-text p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.cookie-links {
+    margin-top: 10px;
+}
+
+.cookie-privacy {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.cookie-privacy:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.cookie-buttons button {
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+/* Animation for cookie icon */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(200, 0, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(200, 0, 0, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(200, 0, 0, 0.3);
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cookie-icon {
+        margin: 0 0 15px 0;
+    }
+    
+    .cookie-buttons {
+        margin: 15px 0 0 0;
+        flex-direction: row;
+    }
+}
+
+/* Adding touch-specific enhancements */
+.touch-device .button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.button.clicked {
+    animation: buttonPress 0.2s forwards;
+}
+
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.96); }
+    100% { transform: scale(1); }
+}
+
+/* Mobile menu toggle enhancement */
+.mobile-menu-toggle.active {
+    color: var(--secondary-color);
+}
+
+/* Ensure form elements are touch-friendly */
+@media (max-width: 768px) {
+    input, select, textarea, button {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+}

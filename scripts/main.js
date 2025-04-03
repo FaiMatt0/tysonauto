@@ -223,7 +223,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <p>${testimonial.text}</p>
-                    <div class="testimonial-author">- ${testimonial.name}</div>
+                    <div class="testimonial-footer">
+                        <div class="google-logo">
+                            <img src="images/google-logo.png" alt="Google Review">
+                        </div>
+                        <div class="testimonial-author">- ${testimonial.name}</div>
+                    </div>
                 </div>
             `;
             
@@ -269,5 +274,147 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the testimonials if they exist on the page
     if (testimonialSlider) {
         initTestimonials();
+    }
+});
+
+// Cookie consent functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Cookie consent
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptButton = document.getElementById('accept-cookies');
+    const declineButton = document.getElementById('decline-cookies');
+    
+    // Check if user has already made a choice
+    const cookieChoice = localStorage.getItem('cookieConsent');
+    
+    // If no choice has been made, show the banner after a delay
+    if (!cookieChoice) {
+        // Different delay for mobile vs desktop
+        const isMobile = window.innerWidth <= 768;
+        const delay = isMobile ? 4000 : 2000; // Longer delay for mobile to allow page to load
+        
+        setTimeout(() => {
+            cookieConsent.classList.add('active');
+        }, delay);
+    }
+    
+    // Handle accept button click with better touch feedback
+    acceptButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.add('clicked');
+        
+        setTimeout(() => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.remove('active');
+            console.log('Cookies accepted');
+        }, 200);
+    });
+    
+    // Handle decline button click with better touch feedback
+    declineButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.add('clicked');
+        
+        setTimeout(() => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieConsent.classList.remove('active');
+            console.log('Cookies declined');
+        }, 200);
+    });
+    
+    // Improve mobile menu toggle with touch feedback
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (mobileMenu && mobileMenu.classList.contains('active') && 
+            !mobileMenu.contains(e.target) && 
+            !mobileMenuToggle.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+    
+    // Add touch-specific styles for mobile
+    if ('ontouchstart' in window || navigator.maxTouchPoints) {
+        document.body.classList.add('touch-device');
+    }
+    
+    // Handle orientation changes to fix layout issues
+    window.addEventListener('orientationchange', function() {
+        // Fix any layout issues after orientation change
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            
+            // Re-render testimonials if they exist
+            if (typeof initTestimonials === 'function') {
+                initTestimonials();
+            }
+        }, 200);
+    });
+});
+
+// Mobile Menu Toggle Functionality - Improved version
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle .menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (mobileMenuToggle && mobileMenu) {
+        // Remove onclick attribute handler and use event listener instead
+        // since we're adding more functionality
+        mobileMenuToggle.removeAttribute('onclick');
+        
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            
+            // Toggle classes for animation
+            this.classList.toggle('opened');
+            this.setAttribute('aria-expanded', this.classList.contains('opened'));
+            
+            // Toggle mobile menu and body class
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            
+            // Add subtle animation delay when opening
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.style.transitionDelay = '0.05s';
+            } else {
+                // Remove delay for closing
+                mobileMenu.style.transitionDelay = '0s';
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                mobileMenuToggle.classList.remove('opened');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mobileMenu && mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !mobileMenuToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('opened');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+            }
+        });
     }
 });
