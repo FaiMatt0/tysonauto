@@ -1,6 +1,5 @@
 // ...existing code...
 
-// Fix language changer functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Get language selectors
     const languageSelectors = document.querySelectorAll('.language-selector');
@@ -14,10 +13,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Set language cookie
                 document.cookie = `language=${lang}; path=/; max-age=31536000`;
                 
-                // Reload page to apply language change
-                window.location.reload();
+                // For mobile menu, add a small delay before reload to allow menu closing animation
+                if (window.innerWidth < 992 || document.querySelector('.mobile-menu-open')) {
+                    // Log for debugging
+                    console.log('Mobile language change detected');
+                    
+                    // Prevent default menu close behavior if possible
+                    e.stopPropagation();
+                    
+                    // Set a flag in sessionStorage to track language change
+                    sessionStorage.setItem('languageChanged', 'true');
+                    sessionStorage.setItem('selectedLanguage', lang);
+                    
+                    // Add delay to ensure the language change happens after menu animations
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 300);
+                } else {
+                    // Desktop behavior - immediate reload
+                    window.location.reload();
+                }
             });
         });
+    }
+    
+    // Check if we have a pending language change from mobile menu
+    if (sessionStorage.getItem('languageChanged') === 'true') {
+        console.log('Applying pending language change');
+        sessionStorage.removeItem('languageChanged');
+        // No need to reload as we're already on a new page load
     }
     
     // Ensure language functionality works after cookie acceptance
@@ -35,7 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
                             e.preventDefault();
                             const lang = this.getAttribute('data-lang');
                             document.cookie = `language=${lang}; path=/; max-age=31536000`;
-                            window.location.reload();
+                            
+                            // Apply the same mobile-specific handling
+                            if (window.innerWidth < 992 || document.querySelector('.mobile-menu-open')) {
+                                e.stopPropagation();
+                                sessionStorage.setItem('languageChanged', 'true');
+                                sessionStorage.setItem('selectedLanguage', lang);
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 300);
+                            } else {
+                                window.location.reload();
+                            }
                         });
                         selector.parentNode.replaceChild(newSelector, selector);
                     });
