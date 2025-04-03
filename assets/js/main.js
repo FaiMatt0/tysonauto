@@ -48,6 +48,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const cookieAcceptButton = document.querySelector('.cookie-accept-btn');
     if (cookieAcceptButton) {
         cookieAcceptButton.addEventListener('click', function() {
+            // Disable privacy link to prevent invisible clicks
+            const privacyLinks = document.querySelectorAll('.cookie-privacy-link');
+            if (privacyLinks) {
+                privacyLinks.forEach(link => {
+                    // Either remove the link or make it non-interactive
+                    link.style.pointerEvents = 'none';
+                    link.setAttribute('tabindex', '-1');
+                    link.setAttribute('aria-hidden', 'true');
+                    // Remove any event listeners by cloning
+                    const newLink = link.cloneNode(true);
+                    if (link.parentNode) {
+                        link.parentNode.replaceChild(newLink, link);
+                    }
+                });
+            }
+            
             // Re-initialize language selectors after cookie acceptance
             setTimeout(() => {
                 const languageSelectors = document.querySelectorAll('.language-selector');
@@ -77,6 +93,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, 100); // Small delay to ensure cookie modal is fully processed
         });
+    }
+    
+    // Also handle any existing cookie banners if they're already closed
+    if (document.querySelector('.cookie-banner.hidden, .cookie-banner[style*="display: none"]')) {
+        const privacyLinks = document.querySelectorAll('.cookie-privacy-link');
+        if (privacyLinks) {
+            privacyLinks.forEach(link => {
+                link.style.pointerEvents = 'none';
+                link.setAttribute('tabindex', '-1');
+                link.setAttribute('aria-hidden', 'true');
+            });
+        }
     }
 });
 
