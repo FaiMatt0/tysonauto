@@ -380,6 +380,106 @@
     }
 }
 
+/* Ensure cookie consent is properly displayed on mobile */
+.cookie-consent {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.cookie-content {
+    flex-direction: column;
+    padding: 15px;
+}
+
+.cookie-buttons {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.cookie-buttons button {
+    margin: 0;
+    width: 48%;
+}
+
+/* Ensure language selector in mobile menu works properly */
+.mobile-language-selector {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.mobile-language-selector button {
+    background: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-language-selector button.active {
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+/* Make mobile menu fullscreen */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+/* Ensure proper display of language content */
+.it-content, .en-content {
+    display: none;
+}
+
+body[data-lang="it"] .it-content,
+body[data-lang="en"] .en-content {
+    display: block;
+}
+
+/* Fix for inline elements */
+h1 .it-content,
+h1 .en-content,
+h2 .it-content,
+h2 .en-content,
+h3 .it-content,
+h3 .en-content,
+p .it-content,
+p .en-content,
+span .it-content,
+span .en-content,
+a .it-content,
+a .en-content,
+button .it-content,
+button .en-content {
+    display: inline;
+}
+
 /* Small screens adjustment */
 @media (max-width: 480px) {
     .hero-text h1 {
