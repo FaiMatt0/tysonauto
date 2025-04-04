@@ -250,19 +250,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get saved language preference or default to Italian
     const savedLanguage = localStorage.getItem('language') || 'it';
     
+    // Detect Safari browser
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
     // Function to switch language
     function switchLanguage(language) {
         // Save preference to localStorage
         localStorage.setItem('language', language);
         
-        // Hide all language content
+        // Apply language-specific classes instead of directly manipulating display property
+        document.body.classList.remove('lang-it', 'lang-en');
+        document.body.classList.add('lang-' + language);
+        
+        // For Safari compatibility, use visibility approach rather than display property
         document.querySelectorAll('.it-content, .en-content').forEach(el => {
-            el.style.display = 'none';
+            el.classList.remove('lang-visible');
+            el.classList.add('lang-hidden');
+            
+            // For Safari, we need a more direct approach
+            if (isSafari) {
+                el.style.opacity = '0';
+                el.style.position = 'absolute';
+                el.style.pointerEvents = 'none';
+            }
         });
         
         // Show content for selected language
         document.querySelectorAll(`.${language}-content`).forEach(el => {
-            el.style.display = 'block';
+            el.classList.remove('lang-hidden');
+            el.classList.add('lang-visible');
+            
+            // For Safari, restore normal display
+            if (isSafari) {
+                el.style.opacity = '1';
+                el.style.position = 'static';
+                el.style.pointerEvents = 'auto';
+            }
         });
         
         // Update active state on buttons
@@ -276,6 +299,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Set the html lang attribute
         document.documentElement.lang = language;
+        
+        // Force Safari to repaint if necessary
+        if (isSafari) {
+            document.body.style.opacity = '0.99';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 10);
+        }
     }
     
     // Add click event listeners to all language buttons

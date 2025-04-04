@@ -102,6 +102,47 @@ img {
     display: none;
 }
 
+/* Language switching styles */
+.lang-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.lang-visible {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Language-specific body classes for more reliable control */
+body.lang-it .en-content {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+body.lang-en .it-content {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .it-content, .en-content {
+        transition: opacity 0.2s ease;
+    }
+    
+    body.lang-it .en-content {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    
+    body.lang-en .it-content {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+}
+
 /* Header */
 .header {
     background-color: var(--primary-color);
