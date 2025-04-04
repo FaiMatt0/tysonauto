@@ -141,6 +141,32 @@ body.lang-en .it-content {
         position: absolute;
         pointer-events: none;
     }
+    
+    /* New cookie consent specific fixes for Safari */
+    #cookie-consent .cookie-content {
+        position: relative;
+        z-index: 9998;
+    }
+    
+    /* Make sure language switcher is above cookie banner */
+    .language-selector, .mobile-language-selector {
+        position: relative;
+        z-index: 10000;
+    }
+    
+    .language-selector button, .mobile-language-selector button {
+        position: relative;
+        z-index: 10000;
+    }
+    
+    /* Better tap target for mobile */
+    @media (max-width: 768px) {
+        .language-selector button, .mobile-language-selector button {
+            padding: 10px !important; /* Ensure larger tap area */
+            min-width: 44px; /* Apple recommended minimum touch target size */
+            min-height: 44px;
+        }
+    }
 }
 
 /* Header */
@@ -807,6 +833,7 @@ body.loaded {
     opacity: 0;
     transform: translateX(-50%) translateY(100px);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    pointer-events: auto;
 }
 
 .cookie-consent.active {
@@ -945,4 +972,25 @@ body.loaded {
     input, select, textarea, button {
         font-size: 16px; /* Prevents iOS zoom on focus */
     }
+}
+
+/* Make sure cookie banner content is correctly positioned for language switching */
+.cookie-consent .it-content, .cookie-consent .en-content {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+body.lang-it .cookie-consent .it-content,
+body.lang-en .cookie-consent .en-content {
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+body.lang-it .cookie-consent .en-content,
+body.lang-en .cookie-consent .it-content {
+    position: absolute !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }

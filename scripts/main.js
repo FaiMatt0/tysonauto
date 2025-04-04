@@ -262,6 +262,46 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('lang-it', 'lang-en');
         document.body.classList.add('lang-' + language);
         
+        // Special handling for cookie consent banner
+        const cookieConsent = document.getElementById('cookie-consent');
+        if (cookieConsent) {
+            // Make sure cookie content is properly handled for Safari
+            const cookieContents = cookieConsent.querySelectorAll('.it-content, .en-content');
+            cookieContents.forEach(el => {
+                if (isSafari) {
+                    // Make all hidden first
+                    el.style.position = 'absolute';
+                    el.style.opacity = '0';
+                    el.style.pointerEvents = 'none';
+                    el.style.visibility = 'hidden';
+                    
+                    // Then show only the selected language
+                    if (el.classList.contains(`${language}-content`)) {
+                        el.style.position = 'static';
+                        el.style.opacity = '1';
+                        el.style.pointerEvents = 'auto';
+                        el.style.visibility = 'visible';
+                    }
+                }
+            });
+            
+            // Ensure cookie consent doesn't block language buttons in Safari
+            if (isSafari) {
+                cookieConsent.style.pointerEvents = 'none';
+                
+                // But make sure the cookie buttons themselves can still receive clicks
+                const cookieButtons = cookieConsent.querySelectorAll('.cookie-buttons button');
+                cookieButtons.forEach(btn => {
+                    btn.style.pointerEvents = 'auto';
+                });
+                
+                const cookieLinks = cookieConsent.querySelectorAll('a');
+                cookieLinks.forEach(link => {
+                    link.style.pointerEvents = 'auto';
+                });
+            }
+        }
+        
         // For Safari compatibility, use visibility approach rather than display property
         document.querySelectorAll('.it-content, .en-content').forEach(el => {
             el.classList.remove('lang-visible');
@@ -269,9 +309,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // For Safari, we need a more direct approach
             if (isSafari) {
-                el.style.opacity = '0';
                 el.style.position = 'absolute';
+                el.style.opacity = '0';
                 el.style.pointerEvents = 'none';
+                el.style.visibility = 'hidden';
             }
         });
         
@@ -282,9 +323,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // For Safari, restore normal display
             if (isSafari) {
-                el.style.opacity = '1';
                 el.style.position = 'static';
+                el.style.opacity = '1';
                 el.style.pointerEvents = 'auto';
+                el.style.visibility = 'visible';
             }
         });
         
@@ -302,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Force Safari to repaint if necessary
         if (isSafari) {
-            document.body.style.opacity = '0.99';
+            document.body.style.opacity = '0.999';
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 10);
@@ -311,7 +353,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add click event listeners to all language buttons
     languageButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling up
             const language = this.getAttribute('data-lang');
             switchLanguage(language);
         });

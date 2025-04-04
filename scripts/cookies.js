@@ -1,45 +1,52 @@
 // Cookie consent functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Cookie consent
+    // Check if user has already made a cookie choice
     const cookieConsent = document.getElementById('cookie-consent');
     const acceptButton = document.getElementById('accept-cookies');
     const declineButton = document.getElementById('decline-cookies');
+    const cookieChoice = localStorage.getItem('cookieChoice');
     
-    // Check if user has already made a choice
-    const cookieChoice = localStorage.getItem('cookieConsent');
-    
-    // If no choice has been made, show the banner after a delay
-    if (!cookieChoice) {
-        // Different delay for mobile vs desktop
-        const isMobile = window.innerWidth <= 768;
-        const delay = isMobile ? 4000 : 2000; // Longer delay for mobile to allow page to load
-        
+    // Display cookie consent if no choice has been made
+    if (!cookieChoice && cookieConsent) {
+        // Delay showing the cookie banner to avoid initial conflicts with language switcher
         setTimeout(() => {
             cookieConsent.classList.add('active');
-        }, delay);
+        }, 1500);
     }
     
-    // Handle accept button click with better touch feedback
-    acceptButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.classList.add('clicked');
-        
-        setTimeout(() => {
-            localStorage.setItem('cookieConsent', 'accepted');
-            cookieConsent.classList.remove('active');
-            console.log('Cookies accepted');
-        }, 200);
-    });
+    // Safari-specific fix to prevent cookie banner from intercepting language button clicks
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (isSafari && cookieConsent) {
+        // Ensure language buttons stay clickable by adding specific event handler
+        const languageButtons = document.querySelectorAll('.language-selector button, .mobile-language-selector button');
+        languageButtons.forEach(button => {
+            button.style.zIndex = '10000'; // Higher than cookie banner
+            button.style.position = 'relative'; // Ensure z-index works
+        });
+    }
     
-    // Handle decline button click with better touch feedback
-    declineButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.classList.add('clicked');
-        
-        setTimeout(() => {
-            localStorage.setItem('cookieConsent', 'declined');
+    // Handle accept and decline button clicks
+    if (acceptButton) {
+        acceptButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            localStorage.setItem('cookieChoice', 'accepted');
             cookieConsent.classList.remove('active');
-            console.log('Cookies declined');
-        }, 200);
-    });
+            // Hide the banner completely after animation
+            setTimeout(() => {
+                cookieConsent.style.display = 'none';
+            }, 500);
+        });
+    }
+    
+    if (declineButton) {
+        declineButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            localStorage.setItem('cookieChoice', 'declined');
+            cookieConsent.classList.remove('active');
+            // Hide the banner completely after animation
+            setTimeout(() => {
+                cookieConsent.style.display = 'none';
+            }, 500);
+        });
+    }
 });
