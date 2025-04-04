@@ -277,59 +277,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Consolidated Mobile Menu and Language Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Improve mobile menu toggle with touch feedback
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-    }
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (mobileMenu && mobileMenu.classList.contains('active') && 
-            !mobileMenu.contains(e.target) && 
-            !mobileMenuToggle.contains(e.target)) {
-            mobileMenu.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-    });
-    
-    // Add touch-specific styles for mobile
-    if ('ontouchstart' in window || navigator.maxTouchPoints) {
-        document.body.classList.add('touch-device');
-    }
-    
-    // Handle orientation changes to fix layout issues
-    window.addEventListener('orientationchange', function() {
-        // Fix any layout issues after orientation change
-        setTimeout(function() {
-            window.scrollTo(0, 0);
-            
-            // Re-render testimonials if they exist
-            if (typeof initTestimonials === 'function') {
-                initTestimonials();
-            }
-        }, 200);
-    });
-});
-
-// Mobile Menu Toggle Functionality - Improved version
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle .menu');
+    // Mobile menu elements
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle button');
     const mobileMenu = document.querySelector('.mobile-menu');
     
     if (mobileMenuToggle && mobileMenu) {
-        // Remove onclick attribute handler and use event listener instead
-        // since we're adding more functionality
-        mobileMenuToggle.removeAttribute('onclick');
-        
+        // Toggle menu when clicking the button
         mobileMenuToggle.addEventListener('click', function(e) {
             e.stopPropagation(); // Prevent event bubbling
             
@@ -340,17 +295,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle mobile menu and body class
             mobileMenu.classList.toggle('active');
             document.body.classList.toggle('menu-open');
-            
-            // Add subtle animation delay when opening
-            if (mobileMenu.classList.contains('active')) {
-                mobileMenu.style.transitionDelay = '0.05s';
-            } else {
-                // Remove delay for closing
-                mobileMenu.style.transitionDelay = '0s';
-            }
         });
         
-        // Close mobile menu when clicking on a link
+        // Close mobile menu when clicking on a navigation link (but not language buttons)
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -361,16 +308,77 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Close mobile menu when clicking outside
+        // Close mobile menu when clicking outside (but not when clicking language buttons)
         document.addEventListener('click', function(e) {
-            if (mobileMenu && mobileMenu.classList.contains('active') && 
+            // Check if the mobile menu is active and if the click is outside the menu and toggle button
+            if (mobileMenu.classList.contains('active') && 
                 !mobileMenu.contains(e.target) && 
                 !mobileMenuToggle.contains(e.target)) {
-                mobileMenu.classList.remove('active');
-                mobileMenuToggle.classList.remove('opened');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                document.body.classList.remove('menu-open');
+                
+                // Check if click is on a language button - don't close menu if it is
+                const isLanguageButton = e.target.closest('.mobile-language-selector button, .language-selector button');
+                if (!isLanguageButton) {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('opened');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('menu-open');
+                }
             }
         });
     }
+
+    // Language switching functionality
+    const languageButtons = document.querySelectorAll('.language-selector button, .mobile-language-selector button');
+    
+    // Set initial language based on stored preference or default to Italian
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'it';
+    setLanguage(savedLanguage);
+    updateActiveLanguageButton(savedLanguage);
+    
+    // Add click event listeners to all language buttons
+    languageButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event propagation
+            e.preventDefault(); // Prevent default action
+            
+            const language = this.getAttribute('data-lang');
+            setLanguage(language);
+            updateActiveLanguageButton(language);
+            
+            // Store user language preference
+            localStorage.setItem('preferredLanguage', language);
+        });
+    });
 });
+
+// Function to update active language button in both menus
+function updateActiveLanguageButton(language) {
+    // Update desktop menu buttons
+    document.querySelectorAll('.language-selector button').forEach(button => {
+        if (button.getAttribute('data-lang') === language) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+    
+    // Update mobile menu buttons
+    document.querySelectorAll('.mobile-language-selector button').forEach(button => {
+        if (button.getAttribute('data-lang') === language) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+// Function to set the language
+function setLanguage(language) {
+    document.querySelectorAll('.it-content').forEach(el => {
+        el.style.display = language === 'it' ? 'inline-block' : 'none';
+    });
+    
+    document.querySelectorAll('.en-content').forEach(el => {
+        el.style.display = language === 'en' ? 'inline-block' : 'none';
+    });
+}
