@@ -308,6 +308,57 @@ html[lang="en"] .it-content {
     to {transform: rotate(360deg);}
 }
 
+/* Placeholder styling */
+::placeholder {
+    color: #aaa;
+    opacity: 0.7;
+    font-style: italic;
+    font-size: 14px;
+}
+  
+::-webkit-input-placeholder {
+    color: #aaa;
+    opacity: 0.7;
+    font-style: italic;
+    font-size: 14px;
+}
+  
+::-moz-placeholder {
+    color: #aaa;
+    opacity: 0.7;
+    font-style: italic;
+    font-size: 14px;
+}
+  
+:-ms-input-placeholder {
+    color: #aaa;
+    opacity: 0.7;
+    font-style: italic;
+    font-size: 14px;
+}
+  
+::-ms-input-placeholder {
+    color: #aaa;
+    opacity: 0.7;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Ensure placeholder text is readable on mobile */
+@media (max-width: 768px) {
+    ::placeholder,
+    ::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    ::-ms-input-placeholder {
+        font-size: 13px;
+    }
+    
+    textarea.form-control {
+        min-height: 120px; /* Slightly smaller on mobile */
+    }
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .contact-grid {

@@ -29,6 +29,9 @@ function setLanguage(lang) {
     
     // Update select options visibility based on language
     updateSelectOptions(lang);
+    
+    // Update placeholders based on language
+    updatePlaceholders(lang);
 }
 
 // Function to update select options based on language
@@ -44,6 +47,14 @@ function updateSelectOptions(lang) {
                 }
             }
         });
+    });
+}
+
+// Function to update placeholders based on language
+function updatePlaceholders(lang) {
+    const inputFields = document.querySelectorAll('input[data-placeholder-' + lang + '], textarea[data-placeholder-' + lang + ']');
+    inputFields.forEach(field => {
+        field.placeholder = field.getAttribute('data-placeholder-' + lang);
     });
 }
 
@@ -154,6 +165,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('select')) {
         updateSelectOptions(savedLanguage);
     }
+    
+    // Update placeholders based on current language
+    updatePlaceholders(savedLanguage);
     
     // Form submission logic for contact form
     const contactForm = document.getElementById('contactForm');
