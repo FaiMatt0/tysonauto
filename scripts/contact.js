@@ -154,4 +154,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('select')) {
         updateSelectOptions(savedLanguage);
     }
+    
+    // Form submission logic for contact form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Form submission logic would go here
+            const formStatus = document.getElementById('form-status');
+            formStatus.innerHTML = '<div class="success">' + 
+                (document.documentElement.lang === 'it' ? 
+                'Messaggio inviato con successo! Ti contatteremo presto.' : 
+                'Message sent successfully! We will contact you soon.') + '</div>';
+            contactForm.reset();
+        });
+    }
 });
