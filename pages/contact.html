@@ -34,6 +34,10 @@
                         <span class="it-content">Contatti</span>
                         <span class="en-content">Contact</span>
                     </a></li>
+                    <li><a href="../pages/login.html">
+                        <span class="it-content">Accedi</span>
+                        <span class="en-content">Login</span>
+                    </a></li>
                 </ul>
             </nav>
             <div class="language-selector">
@@ -61,6 +65,10 @@
             <li><a href="../pages/contact.html" class="active">
                 <span class="it-content">Contatti</span>
                 <span class="en-content">Contact</span>
+            </a></li>
+            <li><a href="../pages/login.html"><i class="fas fa-user"></i> 
+                <span class="it-content">Accedi</span>
+                <span class="en-content">Login</span>
             </a></li>
         </ul>
         <div class="mobile-language-selector">
@@ -175,11 +183,14 @@
                                     <span class="it-content">Nome</span>
                                     <span class="en-content">Name</span>
                                 </label>
-                                <input type="text" id="name" class="form-control" required>
+                                <input type="text" id="name" name="name" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" required>
+                                <label for="email">
+                                    <span class="it-content">Email</span>
+                                    <span class="en-content">Email</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -188,38 +199,28 @@
                                     <span class="it-content">Telefono</span>
                                     <span class="en-content">Phone</span>
                                 </label>
-                                <input type="tel" id="phone" class="form-control">
+                                <input type="tel" id="phone" name="phone" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="subject">
                                     <span class="it-content">Soggetto</span>
                                     <span class="en-content">Subject</span>
                                 </label>
-                                <select id="subject" class="form-control" required>
+                                <select id="subject" name="subject" class="form-control" required>
                                     <option value="" selected disabled>
                                         <span class="it-content">Seleziona...</span>
                                         <span class="en-content">Select...</span>
                                     </option>
-                                    <option value="service">
-                                        <span class="it-content">Richiesta Servizio</span>
-                                        <span class="en-content">Service Request</span>
-                                    </option>
-                                    <option value="quote">
-                                        <span class="it-content">Richiesta Preventivo</span>
-                                        <span class="en-content">Quote Request</span>
-                                    </option>
-                                    <option value="appointment">
-                                        <span class="it-content">Prenotazione Appuntamento</span>
-                                        <span class="en-content">Appointment Booking</span>
-                                    </option>
-                                    <option value="marketplace">
-                                        <span class="it-content">Informazioni Marketplace</span>
-                                        <span class="en-content">Marketplace Information</span>
-                                    </option>
-                                    <option value="other">
-                                        <span class="it-content">Altro</span>
-                                        <span class="en-content">Other</span>
-                                    </option>
+                                    <option value="service" class="it-content">Richiesta Servizio</option>
+                                    <option value="service" class="en-content">Service Request</option>
+                                    <option value="quote" class="it-content">Richiesta Preventivo</option>
+                                    <option value="quote" class="en-content">Quote Request</option>
+                                    <option value="appointment" class="it-content">Prenotazione Appuntamento</option>
+                                    <option value="appointment" class="en-content">Appointment Booking</option>
+                                    <option value="marketplace" class="it-content">Informazioni Marketplace</option>
+                                    <option value="marketplace" class="en-content">Marketplace Information</option>
+                                    <option value="other" class="it-content">Altro</option>
+                                    <option value="other" class="en-content">Other</option>
                                 </select>
                             </div>
                         </div>
@@ -228,15 +229,16 @@
                                 <span class="it-content">Messaggio</span>
                                 <span class="en-content">Message</span>
                             </label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" id="privacy" required>
+                            <input type="checkbox" id="privacy" name="privacy" required>
                             <label for="privacy">
                                 <span class="it-content">Ho letto e accetto la <a href="#">politica sulla privacy</a> e acconsento al trattamento dei miei dati personali.</span>
                                 <span class="en-content">I have read and accept the <a href="#">privacy policy</a> and consent to the processing of my personal data.</span>
                             </label>
                         </div>
+                        <div id="form-status" class="form-status"></div>
                         <button type="submit" class="button primary button-full">
                             <span class="it-content">Invia Messaggio</span>
                             <span class="en-content">Send Message</span>
